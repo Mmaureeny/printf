@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+#include "main.h"
+
+/**
+* main - Entry point
+*
+* Return: Always 0
+*/
+int main(void)
+{
+_printf("%b\n", 98);
+return (0);
+=======
 #include <limits.h>
 #include <stdio.h>
 #include "main.h"
@@ -41,4 +54,5 @@ int main(void)
 	_printf("Unknown:[%r]\n");
 	printf("Unknown:[%r]\n");
 	return (0);
+>>>>>>> 481acf51cb0ef47413162060bf5340fcfae79587
 }
