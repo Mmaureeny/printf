@@ -11,30 +11,29 @@ int (*functions(const char *format))(va_list)
 {
 	int i;
 
-	pr p[] =
-	{
-		{"c",print_char},
+	pr p[] = {
+		{"c", print_char},
 
-		{"s",print_str},
+		{"s", print_str},
 
-		{"i",print_int},
+		{"i", print_int},
 
 		{"d", print_int},
 
-		{"%",print_perc},
+		{"%", print_perc},
 
 		{"o", print_oct},
 
 		{"x", print_hex},
 
-		{"X", print_heX}
+		{"X", print_heX},
 
 		{NULL, NULL}
 	};
 
 	for (i = 0; p[i].type != NULL; i++)
 	{
-		if (format == *(p[i],type));
+		if (*format == *(p[i].type))
 		{
 			break;
 		}

@@ -121,7 +121,7 @@ int print_HEX(unsigned long int n)
 	}
 	return (temp);
 }
-}
+
 /**
  * print_oct - pintf octal numbers.
  * @arguments_list: arguments.
@@ -144,3 +144,4 @@ int print_oct(va_list args)
 	for (j = i - 1; j >= 0; j--)
 		_putchar(octalNum[j] + '0');
 	return (i - 2);
+}

@@ -13,12 +13,12 @@ int print_char(va_list args)
 	return (1);
 }
 /**
- * print_string - prints a string
+ * print_str - prints a string
  * @args: list of variadic args
  *
  * Return: index
  */
-int print_string(va_list args)
+int print_str(va_list args)
 {
 	char *arg = va_arg(args, char *);
 int i;
@@ -33,12 +33,12 @@ int i;
 	return (i);
 }
 /**
- * print_percent - prints a percent
+ * print_perc - prints a percent
  * @args: list of variadic args
  *
  * Return: index
  */
-int print_percent(va_list __attribute__((unused)) args)
+int print_perc(va_list __attribute__((unused)) args)
 {
 	char percent = '%';
 
