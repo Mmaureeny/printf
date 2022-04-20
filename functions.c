@@ -22,11 +22,11 @@ int (*functions(const char *format))(va_list)
 
 		{"%", print_perc},
 
-		{"o", print_oct},
+		/*{"o", print_oct},*/
 
-		{"x", print_hex},
+		/*{"x", print_hex},*/
 
-		{"X", print_heX},
+		/*{"X", print_heX},*/
 
 		{NULL, NULL}
 	};
