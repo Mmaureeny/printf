@@ -1,17 +1,21 @@
 #include "main.h"
 
+/**
 int count_digit(int i);
 void print_number(int n);
-/**
- * print_int - prints an integer
- * @args: va_list of arguments from _printf
- * Return: number of char printed
- */
+*
+*
+* print_int - prints an integer
+* @args: va_list of arguments from _printf
+* Return: number of char printed
+*/
 int print_int(va_list args)
 {
-	int n = va_arg(args, int);
-	int res = count_digit(n);
+	int res;
+	int n;
 
+	n = va_arg(args, int);
+	res = count_digit(n);
 	if (n <= 0)
 		res++;
 	print_number(n);
