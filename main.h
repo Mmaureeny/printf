@@ -14,8 +14,8 @@ int (*functions(const char *format))(va_list);
 int _putchar(char c);
 int _puts(char *str);
 int print_char(va_list args);
-int print_string(va_list args);
-int print_percent(va_list args);
+int print_str(va_list args);
+int print_perc(va_list args);
 int print_int(va_list args);
 
 int print_hex(va_list args);
@@ -30,7 +30,15 @@ int print_oct(va_list args);
 */
 typedef struct prnt
 {
+<<<<<<< HEAD
 char type;
 int (*f)(va_list);
 } pr;
+=======
+	char *type;
+	int(*f)(va_list);
+}pr;
+>>>>>>> 481acf51cb0ef47413162060bf5340fcfae79587
+
+>>>>>>> 3ccff2a82000ec17b4cc78d1e94eae7bbb67ccf8
 #endif

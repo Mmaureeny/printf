@@ -1,4 +1,4 @@
-#include <main.h>
+#include "main.h"
 
 /**
 *_printf -produces output accoring to format
@@ -40,7 +40,7 @@ int _printf(const char *format, ...)
 			{
 				_putchar('%');
 				
-				_putchar(fortmat[i]);
+				_putchar(format[i]);
 				
 				count += 2;
 			}
