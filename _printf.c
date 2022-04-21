@@ -1,59 +1,52 @@
+#include <stdarg.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include "main.h"
-
+#include <stddef.h>
 /**
-*_printf -produces output accoring to format
-@format: string  containg characters and specifiers
-*Returns: number of characters
-*/
+ * _printf - recreates the printf function
+ * @format: string with format specifier
+ * Return: number of characters printed
+ */
 int _printf(const char *format, ...)
 {
-	va_list args;
-	int(*f)(va_list);
-	unsigned int i = 0, count = 0;
-
-	if (format == NULL)
-		return (-1);
-
-	va_start(args, format);
-
-	if (args == NULL)
-		return (-1);
-
-	for (i = 0; format[i] != '\0'; i++)
+	if (format != NULL)
 	{
-		if ( format[i] == '%')
+		int count = 0, i;
+		int (*m)(va_list);
+		va_list args;
+
+		va_start(args, format);
+		i = 0;
+		if (format[0] == '%' && format[1] == '\0')
+			return (-1);
+		while (format != NULL && format[i] != '\0')
 		{
-			i++;
-		
-			if (format[i] == '\0')
+			if (format[i] == '%')
 			{
-				return(-1);
-			}
-
-			while (format[i] == ' ')
-				
-				i++;
-
-			f = functions(&format[i]);
-
-			if (f == NULL)
-			{
-				_putchar('%');
-				
-				_putchar(format[i]);
-				
-				count += 2;
+				if (format[i + 1] == '%')
+				{
+					count += _putchar(format[i]);
+					i += 2;
+				}
+				else
+				{
+					m = get_func(format[i + 1]);
+					if (m)
+						count += m(args);
+					else
+						count = _putchar(format[i]) + _putchar(format[i + 1]);
+					i += 2;
+				}
 			}
 			else
-			count += f(args);
+			{
+				count += _putchar(format[i]);
+				i++;
+			}
 		}
-		else
-		{
-			_putchar(format[i]);
-			
-			count++;
-		}
+		va_end(args);
+		return (count);
 	}
-	va_end(args);
-	return (count);
+	return (-1);
 }
