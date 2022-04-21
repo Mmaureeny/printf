@@ -15,7 +15,7 @@ int
 .B
 _printf
 (
-.I const 
+.I const
 .I char
 .I *
 .I format
